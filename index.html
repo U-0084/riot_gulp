@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- mata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="${description}">
+
+  <title>${title} - Riot.js</title>
+
+  <!-- link -->
+  <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/monokai.css' />
+
+  <style>${style}</style>
+</head>
+<body>
+  <route></route>
+
+  <!-- script -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.jsdelivr.net/riot/2.3/riot+compiler.min.js"></script>
+  <script src="tag/app_logo.tag" type="riot/tag"></script>
+  <script src="tag/app_nav.tag" type="riot/tag"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
