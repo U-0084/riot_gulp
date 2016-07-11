@@ -1,0 +1,37 @@
+body {
+	color: #515151;
+	font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
+}
+* {
+	box-sizing: border-box;
+}
+.cmn_baselayout {
+	width: 100%;
+	max-width: 1000px;
+	margin: 100px auto 0;
+	padding: 0 20px;
+}
+.cmn_baseTtl {
+	padding-bottom: 10px;
+	font-size: 35px;
+	font-weight: bold;
+	border-bottom: 1px solid #fc0e49;
+}
+.cmn_baseTxt {
+	margin-top: 40px;
+	font-size: 20px;
+}
+.cmn_baseTxt__bold {
+	font-size: 22px;
+	font-weight: bold;
+}
+.cmn_list {
+	margin-top: 50px;
+}
+.cmn_list > li {
+	margin: 10px 0 0 26px;
+	list-style-type: disc;
+}
+.cmn_list > li:first-child {
+	margin: 0 0 0 26px;
+}
