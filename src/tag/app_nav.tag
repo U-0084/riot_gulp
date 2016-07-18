@@ -1,8 +1,8 @@
-<articles>
+<app_nav>
 
 	<ul>
-		<li each='{ list }'>
-			<a href="/{ url }" onClick={ listClick }">{ title }</a>
+		<li each='{ list, i in list }'>
+			<a href="/#{ list.url }" onClick={ listClick }">{ list.title }</a>
 		</li>
 	</ul>
 
@@ -20,16 +20,6 @@
 		li {
 			position: relative;
 			width: 33%;
-		}
-		li::before {
-			display: block;
-			content: "";
-			position: absolute;
-			top: 14px;
-			left: 48%;
-			border: 12px solid transparent;
-			border-bottom: 14px solid #fff;
-			transition: .3s;
 		}
 		a {
 			display: block;
@@ -62,7 +52,7 @@
 		];
 
 		listClick(e) {
-			console.log(this);
+			console.log(self);
 		}
 	</script>
-</articles>
+</app_nav>

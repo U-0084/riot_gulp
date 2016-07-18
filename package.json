@@ -23,6 +23,10 @@
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
     "riot": "^2.5.0",
+    "riot-router": "^0.7.3",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
     "riot-router": "^0.7.3"
   }
 }
