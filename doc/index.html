@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Riot.js</h1>
+					<p>〜SPAを知らない人間がSPAを作ってみた〜</p>
+				</section>
+				<section>
+					<section>
+						<h1>あらすじ</h1>
+					</section>
+					<section>
+						<p>
+							近年、このフロントエンド界隈は『FW戦国時代』と揶揄されるほど数多くのFWが存在しています。</small>
+						</p>
+						<p>
+							世間的に優れたフロントエンドエンジニアというのはどのFWはどういう特徴で何ができるのかを理解した上で、自分が扱っているプロダクトに適したものを選別できる人間のことをいうそうです。
+						</p>
+					</section>
+					<section>
+						<h1>しかし</h1>
+					</section>
+					<section>
+						<p>全てのFWの概要を知るには学習コストも時間も膨大にかかってしまうという大きなデメリットがあります。</p>
+						<p>
+							<small>（優れたフロントエンドエンジニアへの道のりは険しいですね…）</small>
+						</p>
+					</section>
+					<section>
+						<p>そんな、エンジニアが疲弊しきっているこの時代にあるひとつのFWが『反乱』を起こしました。</p>
+						<p>それがRiot.jsなのです。</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Riot.jsとは！？</h1>
+						<p><a href="http://riotjs.com/ja/" taregt="_blank"><img src="img/img_riot_02.png" width="400" alt=""></a></p>
+					</section>
+					<section>
+						<p><img src="img/img_riot_01.jpg" width="400" alt=""></p>
+						<p>Riot.jsは他のFWと比べると比較的新しいFWです。先ほど軽く説明しましたがRiotの開発者は今の複雑化した数々のFWに対してひとつのシンプルな疑問を持っていました。</p>
+					</section>
+					<section>
+						<h2>『なぜこんなに複雑なんだろう』</h2>
+						<p>と。</p>
+						 <p><small>※Riot.jsは他のURライブラリと比べてAPIが約100倍少ないそうです。</small></p>
+					</section>
+					<section data-markdown>
+						そんな開発者の思いから、Riot.jsには以下のような魅力が詰め込まれています。
+
+						+ コンポーネント指向
+						+ 超軽量ライブラリ
+						+ 学習コストが低い
+						+ jQueryとの親和性が高い
+
+						etc...
+					</section>
+					<section>
+						<h1>コンポーネント指向</h1>
+					</section>
+					<section>
+						<p>
+							ざっくり説明すると『データ（Model）』、『見た目(View)』、『挙動(Controler)』をひとつのファイルで管理がしてそれをサイト内で使い回すという概念。
+						</p>
+						<p>
+							最近よく耳にする『仮想DOM』や『SPA』というのもこのコンポーネント指向に紐付く実装方法です。
+						</p>
+					</section>
+					<section>
+						<img src="img/img_riot_04.png" alt="">
+					</section>
+					<section>
+						<p>使い方などの詳細は後で説明しますが、これがコンポーネント指向の一例です。</p>
+						<p>なんと、普段我々が触っているソースコードそのものじゃないですか。</p>
+						<p><small>※最終的にこのコンポーネントはJSにインブラウザ・コンパイルされます。</small></p>
+					</section>
+					<section>
+						<h1>超軽量ライブラリ</h1>
+					</section>
+					<section>
+						<p>以下の画像は公式サイトから引用してきたものですが、他のライブラリと比較してみると『超軽量』であることがわかります。</p>
+						<img src="img/img_riot_03.png" alt="">
+					</section>
+					<section data-markdown>
+						公式サイトからライブラリをダウンロードするもよし、CDNサーバーから読み込んでもよし。その日からすぐに使用できます！
+
+						* [公式サイト](http://riotjs.com/ja/download/)
+						* [CDNサーバー](https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot.min.js)
+						</p>
+					</section>
+					<section>
+						<h1>学習コストが低い</h1>
+					</section>
+					<section>
+						<p>先ほど画像やテキストでお見せしたように、導入・利用は非常にシンプルです。</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							① ライブラリの読み込み
+							```
+							<!-- index.html -->
+
+							<!DOCTYPE html>
+							<html lang="ja">
+							<head>
+								<meta charset="UTF-8">
+								<title>らいおっと</title>
+							</head>
+							<body>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot.min.js"><//script>
+							</body>
+							</html>
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							② newsList.tag』というファイルを作り、bodyタグ内に表示させたいコンポーネントのタグを設置します
+							```
+							<!-- index.html -->
+
+							<!DOCTYPE html>
+							<html lang="ja">
+							<head>
+								<meta charset="UTF-8">
+								<title>らいおっと</title>
+								<style>{ style }</style>
+							</head>
+							<body>
+
+							<newsList></newsList>
+
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot.min.js"><//script>
+							<script src="/tag/newsList.tag" type="riot/tag"><//script>
+							<script>riot.mount('*');<//script>
+							</body>
+							</html>
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							③ newsList.tagの中にコンポーネントを埋め込んでいく
+							```
+							<!-- newsList.tag -->
+
+							<newsList>
+								<div>
+									<h2>{ title }</h2>
+									<ul>
+										<li each={ item, i in item }>
+											<p>{ item.date }</p>
+											<a href="{ item.url }">{ item.text }</a>
+										</li>
+									</ul>
+								</div>
+
+								<style scoped>
+									:scope {
+										display: block;
+									}
+									div {
+										width: 40%;
+										padding: 20px;
+										color: #666;
+										border: 1px solid #ddd;
+										background-color: #f5f5f5;
+									}
+									h2 {
+										font-size: 20px;
+									}
+									ul {
+										margin-top: 24px;
+									}
+									li {
+										padding: 20px 0;
+										border-top: 1px solid #ddd;
+									}
+									a {
+										display: block;
+										color: #41c7ff;
+									}
+								</style>
+
+								<script>
+									this.title = 'お知らせ';
+									this.item = [
+										{
+											date: '2016/07/23',
+											text: '終わりました。違う意味で。',
+											url: '/20160723/'
+										},
+										{
+											date: '2016/07/22',
+											text: '明日はFW勉強会です。なお、まだ資料作りが終わっていないけどまぁなんとかなるでしょう。',
+											url: '/20160722/'
+										},
+										{
+											date: '2016/07/21',
+											text: '明後日は勉強会です。ぼちぼち資料作りを始めようと思いました。',
+											url: '/20160722/'
+										},
+										{
+											date: '2016/07/20',
+											text: '明々後日は勉強会です。まだ3日あるし明日やれば間に合う気がした。',
+											url: '/20160722/'
+										}
+									]
+								</newsList>/script>
+							</newsList>
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							④ newsList.tagの中身が`<newsList></newsList>`の中に入って仮想DOMのできあがりです！
+							```
+							<!-- index.html -->
+
+							<!DOCTYPE html>
+							<html lang="ja">
+							<head>
+								<meta charset="UTF-8">
+								<title>らいおっと</title>
+								<style>{ style }</style>
+							</head>
+							<body>
+
+							<newsList></newsList>
+
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot.min.js"><//script>
+							<script src="/tag/newsList.tag" type="riot/tag"><//script>
+							<script>riot.mount('*');<//script>
+							</body>
+							</html>
+							```
+							Reactでいうところのjsxのようなものですね！
+							<small>※ちなみにRiotで扱うコンポーネントファイルの拡張子は`*`.tagでも`*`.jsでもなんでも大丈夫です！</small>
+						</script>
+					</section>
+					<section>
+						<p>よくRiotの比較対象としてReactが挙げられます。</p>
+						<p>それぞれの特徴を簡潔に表現すると、HTMLをJSで書くのがReact。JSをHTMLで書くのがRiotだと言われているようです。</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
