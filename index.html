@@ -6,29 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${description}">
 
-  <title>${title} - Riot.js</title>
+  <title>${ title } - Riot.js</title>
 
   <!-- link -->
   <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
   <link rel='stylesheet' href='/assets/css/style.css' />
 
-  <style>${style}</style>
+  <style>${ style }</style>
 </head>
 <body>
   <app_header></app_header>
   <app_nav></app_nav>
+  <main class="mainContent">
 
-  <route></route>
+    <route></route>
+    <newsList></newsList>
+
+  </main>
+  <div class="js-overlay">
+    <div class="js-mailMagazine">
+      登録完了！
+    </div>
+  </div>
 
   <!-- tag -->
+  <script src="/src/tag/not-found.tag" type="riot/tag"></script>
   <script src="/src/tag/app_logo.tag" type="riot/tag"></script>
   <script src="/src/tag/app_nav.tag" type="riot/tag"></script>
+  <script src="/src/tag/newsList.tag" type="riot/tag"></script>
 
   <!-- script -->
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="  crossorigin="anonymous"></script>
   <script src="node_modules/riot/riot+compiler.min.js"></script>
   <script src="node_modules/riot-router/lib/router.min.js"></script>
 
-  <script src="/app.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    $(function() {
+      // var $newsList = $('.js-news__list'),
+      //     newsListItem = $newsList.find('li');
+
+      // console.log($newsList);
+      // console.log(newsListItem);
+
+      var $overlay = $('js-overlay');
+
+      $($overlay).on('click', function(e) {
+        var $this = $(this);
+
+        e.stopPropagation();
+        $this.hide();
+
+        return false;
+      })
+    });
+  </script>
 </body>
 </html>

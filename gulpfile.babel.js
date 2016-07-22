@@ -9,6 +9,13 @@ const reload = browserSync.reload;
 
 
 const path = {
+  html: {
+    src: './**/*.html',
+    watch: './**/*.html'
+  },
+  css: {
+    watch: './assets/css/*.css'
+  },
   tag: {
     src: './src/tag/*.tag',
     dist: 'dest/'
@@ -35,4 +42,6 @@ gulp.task('browser-sync', () => {
 
 gulp.task('default', ['browser-sync'], () => {
   gulp.watch(path.tag.src).on('change', reload);
+  gulp.watch(path.html.watch).on('change', reload);
+  gulp.watch(path.css.watch).on('change', reload);
 });

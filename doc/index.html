@@ -50,13 +50,14 @@
 						</p>
 					</section>
 					<section>
-						<p>そんな、エンジニアが疲弊しきっているこの時代にあるひとつのFWが『反乱』を起こしました。</p>
+						<p>そんな、エンジニアたちが疲弊しきっているこの戦乱の世に、あるひとつのFWが『反乱』を起こしました。</p>
 						<p>それがRiot.jsなのです。</p>
+						<img src="img/img_riot_07.jpg" width="500" alt="">
 					</section>
 				</section>
 				<section>
 					<section>
-						<h1>Riot.jsとは！？</h1>
+						<h1>Riot.jsとは</h1>
 						<p><a href="http://riotjs.com/ja/" taregt="_blank"><img src="img/img_riot_02.png" width="400" alt=""></a></p>
 					</section>
 					<section>
@@ -66,7 +67,7 @@
 					<section>
 						<h2>『なぜこんなに複雑なんだろう』</h2>
 						<p>と。</p>
-						 <p><small>※Riot.jsは他のURライブラリと比べてAPIが約100倍少ないそうです。</small></p>
+						 <p><small>※Riot.jsは他のライブラリと比べてAPIが約100倍少ないそうです。</small></p>
 					</section>
 					<section data-markdown>
 						そんな開発者の思いから、Riot.jsには以下のような魅力が詰め込まれています。
@@ -102,7 +103,8 @@
 					</section>
 					<section>
 						<p>以下の画像は公式サイトから引用してきたものですが、他のライブラリと比較してみると『超軽量』であることがわかります。</p>
-						<img src="img/img_riot_03.png" alt="">
+						<p><img src="img/img_riot_03.png" width="800" alt=""></p>
+						<p><img src="img/img_riot_06.png" width="800" alt=""></p>
 					</section>
 					<section data-markdown>
 						公式サイトからライブラリをダウンロードするもよし、CDNサーバーから読み込んでもよし。その日からすぐに使用できます！
@@ -138,7 +140,7 @@
 					</section>
 					<section data-markdown>
 						<script type="text/template">
-							② newsList.tag』というファイルを作り、bodyタグ内に表示させたいコンポーネントのタグを設置します
+							② 『newsList.tag』というファイルを作り、bodyタグ内に表示させたいコンポーネントのタグを設置します
 							```
 							<!-- index.html -->
 
@@ -215,7 +217,7 @@
 										},
 										{
 											date: '2016/07/22',
-											text: '明日はFW勉強会です。なお、まだ資料作りが終わっていないけどまぁなんとかなるでしょう。',
+											text: '明日はFW勉強会です。ポケモンgo楽しい。',
 											url: '/20160722/'
 										},
 										{
@@ -229,7 +231,7 @@
 											url: '/20160722/'
 										}
 									]
-								</newsList>/script>
+								<//script>
 							</newsList>
 							```
 						</script>
@@ -262,9 +264,84 @@
 						</script>
 					</section>
 					<section>
-						<p>よくRiotの比較対象としてReactが挙げられます。</p>
-						<p>それぞれの特徴を簡潔に表現すると、HTMLをJSで書くのがReact。JSをHTMLで書くのがRiotだと言われているようです。</p>
+						<p>とまぁこんなかんじでたったの4ステップで仮想DOMができてしまいます。</p>
+						<p>素敵ですね！！</p>
 					</section>
+					<section>
+						<h1>jQueryとの親和性が高い</h1>
+					</section>
+					<section>
+						<p>コンポーネント指向が普及してViewのコントロールはView自身が行っている為、最近ではjQueryはいらない子説が出てきています。</p>
+						<p>とはいえ、偉大なるjQuryを使わず開発をするというのもなんとなく不安ですし、jQueryでしかできない（やりやすい）事も多々あるかと思うのでそう簡単に手放す事もできないという現状があります。</p>
+					</section>
+					<section>
+						<h2>よろしい、ならば使いましょう</h2>
+						<img src="img/img_riot_05.jpg">
+						<p><small>※ソースコードタイム</small></p>
+					</section>
+					<section>
+						<p>というわけでRiot.jsにもjQueryを使える事が判明しました。</p>
+						<p>しかし自分の中で一点懸念点があります。</p>
+					</section>
+					<section>
+						<p>たしかにjQueryは便利ですが、コンポーネント指向で考えた時にカスタムタグの中で定義されたコンポーネントでそこ以外のパーツの操作をしてしまっていいのだろうか。</p>
+						<p>なんて思ってしまいました。</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## etc...
+
+							* IE8までサポートしている
+							* scriptタグに`type="text/es6"`と書けばES2015で書く事ができて自動的にES5にコンパイルされる（TypeScript、CoffeeScriptも使用可）
+							* 静的コンテンツのみでコーディングしているプロダクト、タスクランナーとテンプレートエンジンを用いて開発しているプロダクト、SPAでの開発を想定しているプロダクト、これら全てにすぐ導入する事が可能となっています。
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## デメリット
+
+							* 細かいDOM操作やアニメーションがしづらい
+							* Riot独自のSPAに関するドキュメントが非常に少ない
+						</script>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>導入事例</h1>
+					</section>
+					<section>
+						<p><a href="https://gamy.jp/" target="_blank">ゲーム攻略コミュニティサイト、GAMY(ゲーミー）</a></p>
+						<img src="img/img_riot_08.png" alt="">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>どういうアプリケーションに適しているか</h2>
+					</section>
+					<section>
+						<p>『超軽量』を提唱しているので掲示板とかニュースサイトとか更新頻度も多く、Modelの部分が重くなりがちなサイトにすごく適しているなぁと思いました。</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>まとめ</h1>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							* 簡単に導入できるのはストレスフリーで良い
+							* 基本的にどんなプロダクトにも導入可能
+							* 自分的にReactやAngular2といった敷居の高そうなFWは割と避けがちでした。ですけれど、今回の勉強会の資料作りを通じて仮想DOMやコンポーネント指向を理解するのにいいきっかけとなったので、これを機にReactもちゃんと勉強していきたいなぁと思えました。（余談ですが、RiotはほとんどReactをベースに作ったそうなので似通っている部分も多いようです）
+						</script>
+					</section>
+				</section>
+				<section>
+					<h1>質疑応答</h1>
+				</section>
+				<section>
+					<img src="img/img_riot_09.jpg" width="500" alt="">
+				</section>
+				<section>
+					<h1>End</h1>
 				</section>
 			</div>
 		</div>

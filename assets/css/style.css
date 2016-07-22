@@ -5,6 +5,12 @@ body {
 * {
 	box-sizing: border-box;
 }
+.mainContent {
+	width: 100%;
+	max-width: 1000px;
+	margin: 20px auto 0;
+	padding: 0 20px;
+}
 .cmn_baselayout {
 	width: 100%;
 	max-width: 1000px;
@@ -34,4 +40,31 @@ body {
 }
 .cmn_list > li:first-child {
 	margin: 0 0 0 26px;
+}
+.js-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .8);
+	z-index: 100;
+}
+.js-mailMagazine {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 400px;
+	height: 80px;
+	margin: auto;
+	padding: 20px;
+	color: #41c7ff;
+	text-align: center;
+	font-size: 30px;
+	background-color: #fff;
+	border-radius: 20px;
 }

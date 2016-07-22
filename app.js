@@ -9,7 +9,7 @@ riot.compile(function() {
 
   riot.router.routes([
     new DefaultRoute({tag: 'home'}),
-    new NotFoundRoute({tag: 'src/tag/not-found'}),
+    new NotFoundRoute({tag: '/src/tag/not-found'}),
     new Route({path: '/about', tag: '/src/tag/home'})
   ]);
 
